@@ -2,6 +2,6 @@
 
 param($folder)
 
-Get-ChildItem -Path $folder -Recurse | where {$_.Name -like '*.cpp' -OR $_.Name -like '*.h'} | % {Write-Output "formatting: $_" && clang-format -i $_}
+Get-ChildItem -Path $folder -Recurse | where {$_.Name -like '*.c' -OR $_.Name -like '*.cpp' -OR $_.Name -like '*.h' -OR $_.Name -like '*.hpp'} | % {Write-Output "formatting: $_" && clang-format -i $_}
 
 Write-Output "Done."
